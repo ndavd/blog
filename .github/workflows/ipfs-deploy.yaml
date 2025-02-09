@@ -6,6 +6,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -29,14 +31,17 @@ jobs:
       - name: Launch ipfs daemon
         run: |
           ipfs daemon &
-      - name: Wait 20 seconds for daemon to launch
+      - name: Wait 10 seconds for daemon to finish launching
         run: |
-          sleep 20
+          sleep 10
       - id: deploy
         name: Deploy build to ipfs
         run: |
           CID=$(ipfs add -r --quiet ./dist | tail -n 1)
           echo "cid=$CID" >> $GITHUB_OUTPUT
+      - name: Shutdown ipfs daemon
+        run: |
+          ipfs shutdown
       - id: write
         name: Write CID
         run: |
@@ -46,5 +51,5 @@ jobs:
         if: steps.write.outputs.changed == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(auto): update cid"
+          commit_message: "chore(action): update cid"
           file_pattern: 'cid.txt'
