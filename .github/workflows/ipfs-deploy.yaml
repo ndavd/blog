@@ -32,6 +32,10 @@ jobs:
       - name: Wait 20 seconds for daemon to launch
         run: |
           sleep 20
-      - name: Add static files to ipfs
+      - id: deploy
+        name: Deploy build to ipfs
         run: |
-          ipfs add -r ./dist
+          CID=$(ipfs add -r ./dist | tail -n 1)
+          echo "cid=$CID" >> $GITHUB_OUTPUT
+      - name: Echo CID
+        run: echo "${{steps.deploy.outputs.cid}}"
