@@ -35,7 +35,16 @@ jobs:
       - id: deploy
         name: Deploy build to ipfs
         run: |
-          CID=$(ipfs add -r ./dist | tail -n 1)
+          CID=$(ipfs add -r --quiet ./dist | tail -n 1)
           echo "cid=$CID" >> $GITHUB_OUTPUT
-      - name: Echo CID
-        run: echo "${{steps.deploy.outputs.cid}}"
+      - id: write
+        name: Write CID
+        run: |
+          echo "${{steps.deploy.outputs.cid}}" > cid.txt
+          git diff --exit-code || echo "changed=true" >> $GITHUB_OUTPUT
+      - name: Commit CID
+        if: steps.write.outputs.changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(auto): update cid"
+          file_pattern: 'cid.txt'
