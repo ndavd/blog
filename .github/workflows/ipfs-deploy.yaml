@@ -1,0 +1,36 @@
+name: IPFS Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup nodejs
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - name: Build
+        run: |
+          yarn install
+          yarn build
+      - name: Install ipfs
+        run: |
+          sudo add-apt-repository ppa:twdragon/ipfs
+          sudo apt update
+          sudo apt install ipfs-kubo
+      - name: Initialize ipfs
+        run: |
+          ipfs init
+      - name: Launch ipfs daemon
+        run: |
+          ipfs daemon &
+      - name: Wait 20 seconds for daemon to launch
+        run: |
+          sleep 20
+      - name: Add static files to ipfs
+        run: |
+          ipfs add -r ./dist
