@@ -3,16 +3,21 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import Background from "../components/background/Background";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate } = Astro.props;
+
+const relativePath = "..";
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead
+      title={title}
+      description={description}
+      relativePath={relativePath}
+    />
     <style>
       .title {
         margin-bottom: 1em;
@@ -33,7 +38,7 @@ const { title, description, pubDate } = Astro.props;
 
   <body>
     <main>
-      <Header />
+      <Header relativePath={relativePath} />
       <article>
         <div class="title">
           <hr />
@@ -46,6 +51,5 @@ const { title, description, pubDate } = Astro.props;
         <slot />
       </article>
     </main>
-    <Background client:only />
   </body>
 </html>

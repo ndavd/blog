@@ -1,11 +1,17 @@
 ---
 import { SITE_TITLE } from "../consts";
+
+interface Props {
+  relativePath: string;
+}
+
+const { relativePath } = Astro.props;
 ---
 
 <header>
   <nav>
     <h1>
-      <a href="/">{SITE_TITLE}</a>
+      <a href={relativePath}>{SITE_TITLE}</a>
     </h1>
   </nav>
 </header>
