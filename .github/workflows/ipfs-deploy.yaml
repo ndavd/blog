@@ -23,15 +23,15 @@ jobs:
       - name: Install ipfs
         run: |
           ./.github/scripts/install-ipfs.sh
-      # - name: Initialize ipfs
-      #   run: |
-      #     ipfs init
-      # - name: Launch ipfs daemon
-      #   run: |
-      #     ipfs daemon &
-      # - name: Wait 20 seconds for daemon to launch
-      #   run: |
-      #     sleep 20
-      # - name: Add static files to ipfs
-      #   run: |
-      #     ipfs add -r ./dist
+      - name: Initialize ipfs
+        run: |
+          ipfs init
+      - name: Launch ipfs daemon
+        run: |
+          ipfs daemon &
+      - name: Wait 20 seconds for daemon to launch
+        run: |
+          sleep 20
+      - name: Add static files to ipfs
+        run: |
+          ipfs add -r ./dist
