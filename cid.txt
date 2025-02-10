@@ -1,1 +1,1 @@
-QmVsDrTu8c9EKV1rXvrd9Au1Z5ofqZwtwKb6ojSUoUugZM
+{ percent: 1, transferred: 265950, total: 265950 }
