@@ -35,7 +35,8 @@ const pinDirectoryToPinata = async () => {
     if (response.statusCode !== 200 || !responseJson.IpfsHash) {
       throw Error("Could not get IpfsHash from pinata");
     }
-    console.log(responseJson.IpfsHash);
+    fs.writeFileSync("cid.txt", responseJson.IpfsHash);
+    console.log("IpfsHash", responseJson.IpfsHash);
   } catch (error) {
     console.error(error);
   }

@@ -19,14 +19,11 @@ jobs:
         run: |
           yarn install
           yarn build
-      - id: deploy
-        name: Deploy to IPFS using Pinata
+      - name: Deploy to IPFS using Pinata
+        # env:
+        #   PINATA_TOKEN: ${{ secrets.PINATA_TOKEN }}
         run: |
-          CID=$(node scripts/pinata-upload.js | tail -n 1)
-          echo "cid=$CID" >> $GITHUB_OUTPUT
-      - name: Write CID
-        run: |
-          echo "${{steps.deploy.outputs.cid}}" > cid.txt
+          node scripts/pinata-upload.js
       - name: Commit CID
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
