@@ -20,8 +20,8 @@ jobs:
           yarn install
           yarn build
       - name: Deploy to IPFS using Pinata
-        # env:
-        #   PINATA_TOKEN: ${{ secrets.PINATA_TOKEN }}
+        env:
+          PINATA_TOKEN: ${{ secrets.PINATA_TOKEN }}
         run: |
           node scripts/pinata-upload.js
       - name: Commit CID
