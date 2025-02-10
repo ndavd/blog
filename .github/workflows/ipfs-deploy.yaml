@@ -19,29 +19,11 @@ jobs:
         run: |
           yarn install
           yarn build
-      - name: Update packages
-        run: |
-          sudo apt update
-      - name: Install ipfs
-        run: |
-          ./.github/scripts/install-ipfs.sh
-      - name: Initialize ipfs
-        run: |
-          ipfs init
-      - name: Launch ipfs daemon
-        run: |
-          ipfs daemon &
-      - name: Wait 10 seconds for daemon to finish launching
-        run: |
-          sleep 10
       - id: deploy
-        name: Deploy build to ipfs
+        name: Deploy to IPFS using Pinata
         run: |
-          CID=$(ipfs add -r --quiet ./dist | tail -n 1)
+          CID=$(node scripts/pinata-upload.js | tail -n 1)
           echo "cid=$CID" >> $GITHUB_OUTPUT
-      - name: Shutdown ipfs daemon
-        run: |
-          ipfs shutdown
       - name: Write CID
         run: |
           echo "${{steps.deploy.outputs.cid}}" > cid.txt
