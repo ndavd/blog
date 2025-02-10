@@ -1,0 +1,49 @@
+---
+const dummyCid = `Qm${"0".repeat(44)}/`;
+---
+
+<style>
+  footer {
+    margin: 0.5em 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    text-align: center;
+  }
+</style>
+<footer>
+  <div
+    style={{
+      display: "flex",
+      gap: "0.5em",
+    }}
+  >
+    <a href="https://ndavd.eth.limo">ndavd.eth.limo</a>
+    <div>
+      (These thoughts are <a href="https://github.com/ndavd/blog">open-source</a>🖋️)
+    </div>
+  </div>
+  <code id="cid-container">
+    <a>{dummyCid}</a>
+  </code>
+</footer>
+<script is:inline>
+  const main = async () => {
+    try {
+      const cidContainer = document.getElementById("cid-container");
+      if (!cidContainer) return;
+      const response = await fetch(
+        "https://raw.githubusercontent.com/ndavd/blog/refs/heads/main/cid.txt",
+      );
+      const cid = await response.text();
+      const cidLink = cidContainer.children[0];
+      cidLink.href = `ipfs://${cid}/`;
+      cidLink.textContent = `${cid}/`;
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  main();
+</script>

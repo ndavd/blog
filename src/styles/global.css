@@ -10,6 +10,7 @@
 body {
   font-family: 'Roboto Mono', monospace;
   padding: 0;
+  margin: 0;
   text-align: justify;
   background: rgb(var(--black));
   background-size: 100% 600px;
@@ -18,12 +19,16 @@ body {
   color: rgb(var(--white));
   font-size: 14px;
   line-height: 1.2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 main {
   width: 720px;
   max-width: calc(100% - 2em);
-  margin: auto;
+  margin: 0 auto;
   padding-bottom: 2em;
 }
 
