@@ -132,16 +132,6 @@ hr {
   border-top: 1px solid rgb(var(--white));
 }
 
-@media (max-width: 720px) {
-  body {
-    font-size: 18px;
-  }
-
-  main {
-    padding: 1em;
-  }
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
