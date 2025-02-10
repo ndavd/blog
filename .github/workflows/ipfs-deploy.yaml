@@ -50,3 +50,10 @@ jobs:
         with:
           commit_message: "chore(action): update cid"
           file_pattern: 'cid.txt'
+      - name: Pin build
+        run: |
+          curl --request POST \
+          --url https://api.pinata.cloud/pinning/pinByHash \
+          --header 'Authorization: Bearer ${{secrets.PINATA_TOKEN}}' \
+          --header 'Content-Type: application/json' \
+          --data '{ "hashToPin": "${{steps.deploy.outputs.cid}}", "pinataMetadata": { "name": "blog" } }'
