@@ -172,6 +172,10 @@ hr {
   background-color: rgba(var(--white), 0.25);
 }
 
+.MathJax {
+  overflow-x: auto;
+}
+
 .MathJax svg {
   font-size: 1.2em;
 }
