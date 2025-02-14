@@ -5,6 +5,11 @@
   --white: 255, 255, 255;
   --white-dim: 25.5, 25.5, 25.5;
   --black: 0, 0, 0;
+
+  --accent-s-code: calc(var(--accent-s) * 0.45);
+  --accent-h-blue: 220deg;
+  --accent-h-green: 120deg;
+  --accent-h-yellow: 60deg;
 }
 
 body {
@@ -38,7 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.5rem 0;
+  margin: 2rem 0 1rem 0;
   color: rgb(var(--white));
   line-height: 1.2;
 }
@@ -97,17 +102,39 @@ table {
   width: 100%;
 }
 
+th,
+td {
+  padding: 0.3em 0.3em;
+  border: 1px solid rgba(var(--white), 0.15);
+}
+
 img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
+li {
+  margin-bottom: 0.6em;
+}
+
 code {
   padding: 2px 5px;
   background-color: rgb(var(--white-dim));
   border-radius: 4px;
-  color: hsl(var(--accent-h), calc(var(--accent-s) * 0.45), var(--accent-l));
+  color: hsl(var(--accent-h), var(--accent-s-code), var(--accent-l));
+}
+
+.code-blue {
+  color: hsl(var(--accent-h-blue), var(--accent-s-code), var(--accent-l));
+}
+
+.code-green {
+  color: hsl(var(--accent-h-green), var(--accent-s-code), var(--accent-l));
+}
+
+.code-yellow {
+  color: hsl(var(--accent-h-yellow), var(--accent-s-code), var(--accent-l));
 }
 
 pre {
@@ -124,7 +151,6 @@ blockquote {
   border-left: 4px solid hsl(var(--accent-h), var(--accent-s), var(--accent-l));
   padding: 0 0 0 20px;
   margin: 0px;
-  font-size: 1.333em;
 }
 
 hr {
@@ -135,10 +161,6 @@ hr {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: rgb(var(--black));
 }
 
 ::-webkit-scrollbar-thumb {
@@ -152,6 +174,11 @@ hr {
 
 .MathJax svg {
   font-size: 1.2em;
+}
+
+::selection {
+  background-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) * 0.7));
+  color: rgb(var(--white));
 }
 
 .sr-only {

@@ -27,11 +27,18 @@ const relativePath = "..";
         line-height: 1;
       }
       .title h1 {
-        margin-bottom: 0.5em;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+      .small {
+        font-size: 0.9em;
+      }
+      .description {
+        margin-bottom: 0.8em;
+        font-style: italic;
       }
       .date {
         margin-bottom: 2em;
-        font-size: 0.9em;
         text-decoration: overline;
       }
     </style>
@@ -44,7 +51,10 @@ const relativePath = "..";
         <div class="title">
           <hr />
           <h1>{title}</h1>
-          <div class="date">
+          <p class="description small">
+            {description}
+          </p>
+          <div class="date small">
             <FormattedDate date={pubDate} />
           </div>
           <hr />

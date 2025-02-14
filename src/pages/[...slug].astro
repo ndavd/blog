@@ -19,3 +19,14 @@ const { Content } = await render(post);
 <BlogPost {...post.data}>
   <Content />
 </BlogPost>
+<script>
+  Array.from(document.querySelectorAll("h2, h3, h4, h5, h6")).forEach(
+    (heading) => {
+      const anchor = document.createElement("a");
+      anchor.style.textDecoration = "none";
+      anchor.href = `#${heading.id}`;
+      heading.parentNode!.insertBefore(anchor, heading);
+      anchor.appendChild(heading);
+    },
+  );
+</script>
