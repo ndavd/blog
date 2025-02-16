@@ -1,5 +1,11 @@
 ---
 const dummyCid = `Qm${"0".repeat(44)}/`;
+
+interface Props {
+  relativePath: string;
+}
+
+const { relativePath } = Astro.props;
 ---
 
 <style>
@@ -30,6 +36,7 @@ const dummyCid = `Qm${"0".repeat(44)}/`;
       (These thoughts are <a href="https://github.com/ndavd/blog">open-source</a
       >🖋️)
     </div>
+    <a href={`${relativePath}/feed.xml`}>RSS</a>
   </div>
   <code id="cid-container">
     <a>{dummyCid}</a>

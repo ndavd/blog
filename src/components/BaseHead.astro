@@ -41,12 +41,11 @@ const { title, description, relativePath } = Astro.props;
   href=`${relativePath}/favicon-16x16.png`
 />
 <link rel="manifest" href=`${relativePath}/site.webmanifest` />
-<link rel="sitemap" href=`${relativePath}/sitemap-index.xml` />
 <link
   rel="alternate"
   type="application/rss+xml"
   title={SITE_TITLE}
-  href={new URL(`${relativePath}/rss.xml`, Astro.site)}
+  href={new URL(`${relativePath}/feed.xml`, Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
 
