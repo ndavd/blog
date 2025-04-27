@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: 'Roboto Mono', monospace;
+  font-family: monospace;
   padding: 0;
   margin: 0;
   text-align: justify;
@@ -22,7 +22,7 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--white));
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;
   min-height: 100vh;
   display: flex;

@@ -9,13 +9,13 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
-    "astro": "^5.2.5",
+    "astro": "5.7.5",
     "form-data": "^4.0.1",
     "got": "^14.4.6",
     "rehype-mathjax": "^6.0.0",
     "remark-math": "^6.0.0"
   },
-  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447",
+  "packageManager": "yarn@4.9.1",
   "devDependencies": {
     "markdown-it": "^14.1.0",
     "prettier": "^3.4.2",
