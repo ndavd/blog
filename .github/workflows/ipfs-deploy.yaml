@@ -25,7 +25,7 @@ jobs:
         env:
           PINATA_TOKEN: ${{ secrets.PINATA_TOKEN }}
         run: |
-          node scripts/pinata-upload.js
+          yarn node scripts/pinata-upload.js
       - name: Commit CID
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
