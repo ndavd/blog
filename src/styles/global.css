@@ -138,21 +138,10 @@ code {
 }
 
 pre {
-  position: relative;
   padding: 1.0em;
-  padding-top: 1.5em;
   border-radius: 8px;
   background-color: inherit !important;
   border: 2px solid rgb(var(--white-dim)) !important;
-}
-
-pre::before {
-  content: attr(data-language);
-  position: absolute;
-  font-size: 0.9rem;
-  opacity: 60%;
-  top: 2px;
-  right: 2px;
 }
 
 pre>code {
