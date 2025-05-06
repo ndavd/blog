@@ -3,7 +3,7 @@
   --accent-s: 81%;
   --accent-l: 60%;
   --white: 255, 255, 255;
-  --white-dim: 25.5, 25.5, 25.5;
+  --white-dim: 20, 20, 20;
   --black: 0, 0, 0;
 
   --accent-s-code: calc(var(--accent-s) * 0.45);
@@ -22,7 +22,7 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--white));
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.2;
   min-height: 100vh;
   display: flex;
