@@ -140,7 +140,7 @@ code {
 pre {
   padding: 1.0em;
   border-radius: 8px;
-  background-color: inherit !important;
+  background-color: rgb(var(--white-dim)) !important;
   border: 2px solid rgb(var(--white-dim)) !important;
 }
 
