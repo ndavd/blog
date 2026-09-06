@@ -4,7 +4,7 @@ import remarkMath from 'remark-math';
 import rehypeMathjax from 'rehype-mathjax';
 
 export default defineConfig({
-  site: 'https://ndavd.eth.limo',
+  site: 'https://blog.ndavd.com',
   integrations: [],
   markdown: {
     remarkPlugins: [remarkMath],

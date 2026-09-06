@@ -4,6 +4,11 @@ description: 'the first post; deep-diving into IPFS, IPLD & IPNS;'
 pubDate: 'Feb 14 2025'
 ---
 
+> NOTE: I have since moved this blog off IPFS, but everything below still holds
+> up.
+
+<br />
+
 A few days ago, when I first decided to create this technical blog, the first
 post was supposed to be about something entirely different. But also during that
 time, I decided that I wanted to host it in a decentralized manner, using the
