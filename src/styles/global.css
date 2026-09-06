@@ -139,13 +139,13 @@ code {
 }
 
 pre {
-  padding: 1.0em;
+  padding: 1em;
   border-radius: 8px;
   background-color: rgb(var(--white-dim)) !important;
   border: 2px solid rgb(var(--white-dim)) !important;
 }
 
-pre>code {
+pre > code {
   all: unset;
 }
 
@@ -183,7 +183,11 @@ hr {
 }
 
 ::selection {
-  background-color: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) * 0.7));
+  background-color: hsl(
+    var(--accent-h),
+    var(--accent-s),
+    calc(var(--accent-l) * 0.7)
+  );
   color: rgb(var(--white));
 }
 

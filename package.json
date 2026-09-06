@@ -11,14 +11,12 @@
     "@astrojs/rss": "^4.0.11",
     "astro": "5.7.12",
     "form-data": "^4.0.1",
-    "got": "^14.4.6",
     "rehype-mathjax": "^6.0.0",
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.5.12",
     "markdown-it": "^14.1.0",
-    "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.14.0",
     "typescript": "^5.7.3"
   }

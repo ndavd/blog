@@ -1,10 +1,10 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import remarkMath from 'remark-math';
-import rehypeMathjax from 'rehype-mathjax';
+import { defineConfig } from "astro/config";
+import remarkMath from "remark-math";
+import rehypeMathjax from "rehype-mathjax";
 
 export default defineConfig({
-  site: 'https://blog.ndavd.com',
+  site: "https://blog.ndavd.com",
   integrations: [],
   markdown: {
     remarkPlugins: [remarkMath],
