@@ -30,5 +30,17 @@
         "organizeImports": "on"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["src/styles/global.css"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noDuplicateProperties": "off"
+          }
+        }
+      }
+    }
+  ]
 }

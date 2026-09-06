@@ -4,7 +4,7 @@ description: 'the first post; deep-diving into IPFS, IPLD & IPNS;'
 pubDate: 'Feb 14 2025'
 ---
 
-> NOTE: I have since moved this blog off IPFS, but everything below still holds up.
+> NOTE: I have since moved this blog off IPFS for simplicity, but everything below still holds up.
 
 <br />
 
