@@ -1,8 +1,10 @@
 // @ts-check
+
+import { unified } from "@astrojs/markdown-remark";
 import { defineConfig } from "astro/config";
+import { rehypeGithubAlerts } from "rehype-github-alerts";
 import rehypeMathjax from "rehype-mathjax";
 import remarkMath from "remark-math";
-import { unified } from "@astrojs/markdown-remark";
 
 export default defineConfig({
   site: "https://blog.ndavd.com",
@@ -10,7 +12,7 @@ export default defineConfig({
   markdown: {
     processor: unified({
       remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeMathjax],
+      rehypePlugins: [rehypeMathjax, rehypeGithubAlerts],
     }),
   },
 });
